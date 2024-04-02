@@ -12,14 +12,14 @@ export default function CryptoSearchForm() {
   })
 
   const [error,setError] = useState('')
-  const { cryptoCurrencies } = useCryptoStore();
+  const { cryptoCurrencies,fetchData } = useCryptoStore();
 
   const handleChange = (e:ChangeEvent<HTMLSelectElement>) => {
     const name = e.target.name;
     const value = e.target.value;
     setPair({
       ...pair,
-      [name]:[value]
+      [name]:value
     });
   };
 
@@ -33,7 +33,7 @@ export default function CryptoSearchForm() {
       return
     }
     setError('');
-    
+    fetchData(pair)
 
   }
 
