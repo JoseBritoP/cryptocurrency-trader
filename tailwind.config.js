@@ -15,7 +15,8 @@ export default {
         xlg: '1600px'
       },
       colors:{
-        primary:"#F59E0B"
+        primary:"#61ECBC",
+        black:'#182339'
       }
     },
   },
