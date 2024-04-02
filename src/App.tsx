@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import './App.css'
 import CryptoSearchForm from './components/CryptoSearchForm'
-
+import { useCryptoStore } from './zustand/store'
 function App() {
 
+  const { fetchCryptos } = useCryptoStore();
+  
+  useEffect(()=>{
+    fetchCryptos()
+  },[]);
+  
   return (
     <main className='max-w-[60rem] w-[95%] my-0 mx-auto text-white'>
       <section className='my-0 mx-auto'>
