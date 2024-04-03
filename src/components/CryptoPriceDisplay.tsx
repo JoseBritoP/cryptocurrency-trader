@@ -1,15 +1,16 @@
 import { useMemo } from "react";
 import { useCryptoStore } from "../zustand/store"
+import Spinner from "./Spinner";
 
 export default function CryptoPriceDisplay() {
 
-  const { result } = useCryptoStore();
+  const { result, loading } = useCryptoStore();
 
   const hasResult = useMemo(()=> !Object.values(result).includes('') ,[result]);
 
   return (
     <div className="mt-5 flex flex-col gap-y-4 ">
-      { hasResult &&  
+      { loading ? <Spinner/> : hasResult &&  
         (<>
           <h2 className="text-center text-3xl">Quotation</h2>
           <div className="grid grid-cols-2 items-center gap-20">
