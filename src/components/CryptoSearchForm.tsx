@@ -59,7 +59,7 @@ export default function CryptoSearchForm() {
             ))}
           </select>
         </div>
-        <button className="hover:bg-[#123866] bg-[#1458aa] transition-colors 300 ease-in-out py-2 px-4 rounded-md text-xl font-semibold border-[1px] border-gray-500 uppercase mt-2">Check currency</button>
+        <button aria-label="Check currency" className="hover:bg-[#123866] bg-[#1458aa] transition-colors 300 ease-in-out py-2 px-4 rounded-md text-xl font-semibold border-[1px] border-gray-500 uppercase mt-2">Check currency</button>
       </legend>
     </form>
   )
